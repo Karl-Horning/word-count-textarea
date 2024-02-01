@@ -6,7 +6,7 @@
  */
 window.addEventListener("load", () => {
     const textareaId = "wordCountTextarea";
-    const wordCountElementId = "word-count";
+    const wordCountElementId = "wordCountNumber";
 
     document.getElementById(textareaId).addEventListener("input", () => {
         updateWordCount(textareaId, wordCountElementId);
