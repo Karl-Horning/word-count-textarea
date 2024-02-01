@@ -45,11 +45,16 @@ const wordCount = (str) => {
 const updateWordCount = (textareaId, wordCountElementId) => {
     const elWordCountTextarea = document.getElementById(textareaId);
     const elWordCountValue = document.getElementById(wordCountElementId);
+    let numberOfWords = 0;
 
-    const cleanedText = cleanAndNormalize(elWordCountTextarea.value);
-    const numberOfWords = wordCount(cleanedText);
+    if (elWordCountTextarea.value) {
+        const cleanedText = cleanAndNormalize(elWordCountTextarea.value);
+        numberOfWords = wordCount(cleanedText);
 
-    elWordCountValue.innerText = numberOfWords;
+        elWordCountValue.innerText = numberOfWords;
+    } else {
+        elWordCountValue.innerText = 0;
+    }
 
     // Update the class based on the number of words
     elWordCountValue.classList.toggle("text-danger", numberOfWords < 1);
