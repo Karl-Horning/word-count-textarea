@@ -17,8 +17,8 @@ const cleanAndNormalize = (str) => {
     // Replace line breaks with space
     str = str.replace(/(?:\r\n|\r|\n)/g, " ");
 
-    // Remove special characters except for alphanumeric, space, dot, and hyphen
-    str = str.replace(/[^a-zA-Z0-9\-.\s]/g, "");
+    // Remove special characters except for alphanumeric and whitespace
+    str = str.replace(/[^a-zA-Z0-9\s]/g, "");
 
     // Replace multiple whitespace with a single space
     str = str.replace(/\s+/g, " ");
